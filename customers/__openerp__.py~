@@ -1,0 +1,10 @@
+{
+'name': "todo_app",
+'version': "1.0",
+'author': "Hammad",
+'category': "apps",
+'depends': ['mail'],
+'data': ['todo_app.xml'],
+'demo': [],
+'installable': True,
+}
