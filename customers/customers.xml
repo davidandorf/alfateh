@@ -30,7 +30,14 @@
 	                <field name="website" position="replace" >  
 	                	<field name="website"/>
 	                </field>
-	                
+	                <field name="website" position="after" >  
+	                	<field name="supplier_ntn" placeholder="1234567-6"/>
+	                	<field name="customer_ntn" placeholder="1234567-6"/>
+	                	<field name="supplier_cnic" placeholder="35202-2810503-1"/>
+	                	<field name="customer_cnic" placeholder="35202-2810503-1"/>
+	                	<field name="buyer_type"/>
+	                	<field name="province"/>
+	                </field>
 	                
                 </data>
             </field>
