@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+        
+         <record id="view_picking_inherit_form3" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='do_partial_open_barcode']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='open_barcode_interface']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="partner_id" position="after" >  
+	                	<field name="supplier_ntn" placeholder="1234567-6"/>
+	                	<field name="customer_ntn" placeholder="1234567-6"/>
+	                	<field name="supplier_cnic" placeholder="35202-2810503-1"/>
+	                	<field name="customer_cnic" placeholder="35202-2810503-1"/>
+	                	<field name="buyer_type"/>
+	                	<field name="province"/>
+	                </field>
+            </field>
+        </record>
+        
+        
+         <record id="view_move_form_custom" model="ir.ui.view">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//button[@string='Scrap']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        
+         <record id="view_move_picking_tree" model="ir.ui.view">
+            <field name="name">stock.move.tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                
+                
+                <field name="state" position="after">
+					<field name="sale_type"/>
+					<field name="schedule_no"/>
+					<field name="item_sr_no"/>
+				</field>
+                
+                
+            </field>
+        </record>
+	</data>
+
+</openerp>
