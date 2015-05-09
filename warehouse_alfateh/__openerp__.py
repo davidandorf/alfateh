@@ -3,7 +3,7 @@
 'version': "1.0",
 'author': "Hammad",
 'category': "apps",
-'depends': ['mail'],
+'depends': ['mail','stock'],
 'data': ['warehouse.xml'],
 'demo': [],
 'installable': True,

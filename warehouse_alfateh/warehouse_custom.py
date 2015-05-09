@@ -1,5 +1,5 @@
 from openerp import models,  fields,  api
-class warehouse_custom(models.Model):
+class stock_picking(models.Model):
     _inherit = "stock.picking"
     customer_ntn = fields.Char(string="Customer NTN",readonly=True)
     customer_cnic = fields.Char(string="Customer CNIC",readonly=True)
