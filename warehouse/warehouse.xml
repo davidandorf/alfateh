@@ -34,6 +34,11 @@
             	<xpath expr="//button[@string='Scrap']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
+                <field name="date" position="after">
+                	<field name="sale_type"/>
+					<field name="schedule_no"/>
+					<field name="item_sr_no"/>
+                </field>
             </field>
         </record>
         
