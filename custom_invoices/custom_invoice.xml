@@ -9,9 +9,8 @@
             
 	            
 	           	<field name="partner_id" position="after" >  
-	               	<field name="supplier_ntn" placeholder="1234567-6"/>
+	               	
 	               	<field name="customer_ntn" placeholder="1234567-6"/>
-	               	<field name="supplier_cnic" placeholder="35202-2810503-1"/>
 	               	<field name="customer_cnic" placeholder="35202-2810503-1"/>
 	               	<field name="buyer_type"/>
 	               	<field name="province"/>
@@ -29,6 +28,33 @@
             	
             </field>
 		</record>
+		
+		<record id="invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+            	<field name="partner_id" position="after" >  
+	               	<field name="supplier_ntn" placeholder="1234567-6"/>
+	               	
+	               	<field name="supplier_cnic" placeholder="35202-2810503-1"/>
+	               	
+	               	<field name="buyer_type"/>
+	               	<field name="province"/>
+	               </field>
+	               
+	               
+	               <tree string="Invoice lines" position="inside">
+	               		
+	                	<field name="sale_type"/>
+						<field name="schedule_no"/>
+						<field name="item_sr_no"/>
+		                
+	               </tree>
+            </field>
+            
+       </record>
         
 	</data>
 
