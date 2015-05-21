@@ -7,6 +7,7 @@ class stock_picking(models.Model):
     supplier_cnic = fields.Char(string="Supplier CNIC" )
     buyer_type = fields.Selection([('registered','Registered'), ('unregistered','Unregistered'),('bulk_unregistered','Bulk-Unregistered'),('retail_customer','Retail Consumers')],"Buyer Type" )
     province = fields.Selection([('punjab','Punjab'), ('sindh','Sindh'),('balochistan','Balochistan'),('kpk','KPK')],"Province" )
+    invoice_state = fields.Selection(default='2binvoiced')
     
     @api.onchange('partner_id')
     def update_fields(self):
