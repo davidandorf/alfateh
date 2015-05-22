@@ -68,6 +68,8 @@ class warehouse_stock_move_custom(models.Model):
             'name': move.name,
             'account_id': account_id,
             'product_id': move.product_id.id,
+            'x_rate': move.product_id.x_rate,
+            'x_hs_code': move.product_id.x_hs_code,
             'uos_id': uos_id,
             'quantity': quantity,
             'price_unit': self._get_price_unit_invoice(cr, uid, move, inv_type),

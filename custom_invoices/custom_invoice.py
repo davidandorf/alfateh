@@ -37,6 +37,8 @@ class custom_invoice_line(models.Model):
     x_extra_tax = fields.Float(string="Extra Tax" )
     x_st_withheld = fields.Float(string="ST Withheld at source" )
     x_further_tax = fields.Float(string="Further tax" )
+    x_rate = fields.Selection([('1', '17'),  ('2', '2'), ('3', '3'), ('4', '5'), ('5', '7.5'), ('6', '8'), ('7', '10'), ('8', '16'), ('9', '18.5'), ('10', '0'), ('11', '0.5'), ('12', 'Exempt'), ('13', 'DTRE'), ('14', 'Rs.7/KWH'), ('15', '6700-MT'), ('16', 'Rs.1/kg'), ('17', 'Rs. 8/KWH'), ('18', 'Rs. 250/SIM'), ('19', 'Rs.500/IMEI'), ('20', 'Rs.250/IMEI'),('21', 'Rs.150/IMEI'),('22', '22'),('23', '27'),('24', '18'),('25', '32'),('26', '37')], "Rate")
+    x_hs_code = fields.Float(string="HS Code")
     
     @api.multi
     def product_id_change(self, product, uom_id, qty=0, name='', type='out_invoice',partner_id=False, fposition_id=False, price_unit=False, currency_id=False,company_id=None):
