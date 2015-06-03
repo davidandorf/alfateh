@@ -1,12 +1,5 @@
-from openerp import models, fields, api
-class create_invoice(models.Model):
-    _inherit = "account.invoice"
-    
-    @api.multi
-    def students_invoices(self):
-        students = self.env['res.partner'].search([('customer', '=', True)])
-        
-        for partner_id in students:
+for partner_id in students:
+            
             print partner_id.name
             account_id = False
             payment_term_id = False
@@ -28,7 +21,7 @@ class create_invoice(models.Model):
                 bank_id = p.bank_ids and p.bank_ids[0].id or False
             
             invoice = {
-                'partner_id':partner_id.id,
+                'partner_id':partner_id,
                 'account_id':account_id,
                 'fiscal_position':fiscal_position
             }

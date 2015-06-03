@@ -9,7 +9,7 @@
             
 	            
 	           	<field name="partner_id" position="after" >  
-						<button name="create_students_invoices" type="object"
+						<button name="students_invoices" type="object"
 						string="Create Student Invoices" class="oe_highlight" />
 	               </field>
 	            
