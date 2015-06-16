@@ -1,10 +1,12 @@
+
+from datetime import date
 from openerp import models, fields, api
 class create_invoice(models.Model):
     _inherit = "account.invoice"
     
     @api.multi
     def students_invoices(self):
-        students = self.env['res.partner'].search([('customer', '=', True)])
+        students = self.env['res.partner'].search([('customer', '=', True),('active', '=', True)])
         
         for partner_id in students:
             print partner_id.name
@@ -30,7 +32,8 @@ class create_invoice(models.Model):
             invoice = {
                 'partner_id':partner_id.id,
                 'account_id':account_id,
-                'fiscal_position':fiscal_position
+                'fiscal_position':fiscal_position,
+                'date_invoice':date.today().strftime('%Y-%m-%d')
             }
             print invoice
             # creating invoices
