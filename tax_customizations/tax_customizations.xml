@@ -9,6 +9,8 @@
             <field name="arch" type="xml">
 
             	<field name="active" position="after" >  
+	            		<field name="sale_type"/>
+	            		<field name="schedule_no"/>
 						<field name="item_sr_no"/>
 						<field name="x_rate"/>
 						<field name="x_hs_code"/>

@@ -4,7 +4,7 @@
 'author': "Hammad",
 'category': "apps",
 'depends': ['account'],
-'data': ['tax_customization.xml'],
+'data': ['tax_customizations.xml'],
 'demo': [],
 'installable': True,
 }
