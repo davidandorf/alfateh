@@ -48,7 +48,7 @@ class tax_customizations_account_tax(models.Model):
 
                 }
                 if invoice.type in ('out_invoice','in_invoice'):
-                    taxes_obj = self.env['account.tax'].search([('base_code_id', '=', tax['base_code_id']),('tax_code_id', '=', tax['tax_code_id'])])[0]
+                    taxes_obj = self.env['account.tax'].search([('name','=',tax['name'])])[0]
                     val['base_code_id'] = tax['base_code_id']
                     val['tax_code_id'] = tax['tax_code_id']
                     val['sale_type'] = taxes_obj.sale_type
@@ -61,7 +61,7 @@ class tax_customizations_account_tax(models.Model):
                     val['account_id'] = tax['account_collected_id'] or line.account_id.id
                     val['account_analytic_id'] = tax['account_analytic_collected_id']
                 else:
-                    taxes_obj = self.env['account.tax'].search([('base_code_id', '=', tax['ref_base_code_id']),('tax_code_id', '=', tax['ref_tax_code_id'])])[0]
+                    taxes_obj = self.env['account.tax'].search([('name','=',tax['name'])])[0]
                     val['sale_type'] = taxes_obj.sale_type
                     val['schedule_no'] = taxes_obj.schedule_no
                     val['item_sr_no'] = taxes_obj.item_sr_no
