@@ -55,7 +55,7 @@ class tax_customizations_account_tax(models.Model):
                     val['schedule_no'] = taxes_obj.schedule_no
                     val['item_sr_no'] = taxes_obj.item_sr_no
                     val['x_rate'] = taxes_obj.x_rate
-                    val['x_hs_code'] = taxes_obj.x_rate
+                    val['x_hs_code'] = taxes_obj.x_hs_code
                     val['base_amount'] = currency.compute(val['base'] * tax['base_sign'], company_currency, round=False)
                     val['tax_amount'] = currency.compute(val['amount'] * tax['tax_sign'], company_currency, round=False)
                     val['account_id'] = tax['account_collected_id'] or line.account_id.id
@@ -66,7 +66,7 @@ class tax_customizations_account_tax(models.Model):
                     val['schedule_no'] = taxes_obj.schedule_no
                     val['item_sr_no'] = taxes_obj.item_sr_no
                     val['x_rate'] = taxes_obj.x_rate
-                    val['x_hs_code'] = taxes_obj.x_rate
+                    val['x_hs_code'] = taxes_obj.x_hs_code
                     val['base_code_id'] = tax['ref_base_code_id']
                     val['tax_code_id'] = tax['ref_tax_code_id']
                     val['base_amount'] = currency.compute(val['base'] * tax['ref_base_sign'], company_currency, round=False)
