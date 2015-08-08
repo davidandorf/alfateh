@@ -33,8 +33,14 @@ class tax_customizations_account_tax(models.Model):
         currency = invoice.currency_id.with_context(date=invoice.date_invoice or fields.Date.context_today(invoice))
         company_currency = invoice.company_id.currency_id
         for line in invoice.invoice_line:
+
+            unit_price = line.price_unit
+
+            if line.item_seller_price != 0:
+                unit_price = line.item_seller_price
+                
             taxes = line.invoice_line_tax_id.compute_all(
-                (line.price_unit * (1 - (line.discount or 0.0) / 100.0)),
+                (unit_price * (1 - (line.discount or 0.0) / 100.0)),
                 line.quantity, line.product_id, invoice.partner_id)['taxes']
             for tax in taxes:
                 val = {

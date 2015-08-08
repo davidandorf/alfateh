@@ -38,6 +38,7 @@
                 	<field name="sale_type"/>
 					<field name="schedule_no"/>
 					<field name="item_sr_no"/>
+                    <field name="item_seller_price"/>
                 </field>
             </field>
         </record>
